@@ -8,8 +8,8 @@ const API_URL = "https://secrets-api.appbrewery.com/";
 //TODO 1: Fill in your values for the 3 types of auth.
 const yourUsername = "121x32132x2qsdaa!!!1231!@";
 const yourPassword = "1231(&*B8aa8ns87";
-const yourAPIKey = "8c3f8e85-7340-46d1-8d59-61899f7052b6";
-const yourBearerToken = "c897ac96-30f9-4138-bf63-f243f664a117";
+const yourAPIKey = "0e0b33ea-3f30-4f6c-a7ae-a9dc6a5d77f9";
+const yourBearerToken = "a71aaf7a-2397-4ffc-a55c-970ac873d472";
 
 app.get("/", (req, res) => {
   res.render("index.ejs", { content: "API Response." });
@@ -31,7 +31,8 @@ app.get("/noAuth", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(response.data) });
   } catch (error) {
     // Handle any errors here
-    console.error("Error status:", error.response.status);
+    // console.error("Error status:", error.response.status);
+    res.status(404).send(error.message);
   }
 });
 
@@ -58,7 +59,8 @@ app.get("/basicAuth", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(response.data) });
   } catch (error) {
     // Handle any errors here
-    console.error("Error status:", error.response.status);
+    // console.error("Error status:", error.response.status);
+    res.status(404).send(error.message);
   }
 });
 
@@ -78,7 +80,8 @@ app.get("/apiKey", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(response.data) });
   } catch (error) {
     // Handle any errors here
-    console.error("Error status:", error.response.status);
+    // console.error("Error status:", error.response.status);
+    res.status(404).send(error.message);
   }
 });
 
@@ -103,7 +106,8 @@ app.get("/bearerToken", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(response.data) });
   } catch (error) {
     // Handle any errors here
-    console.error("Error status:", error.response.status);
+    // console.error("Error status:", error.response.status);
+    res.status(404).send(error.message);
   }
 });
 
