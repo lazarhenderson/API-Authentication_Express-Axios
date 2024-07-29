@@ -12,10 +12,11 @@ Technology used in project:
 1. Express: Web application framework for Node.js to create server and handle routes.
 2. Axios: Promise-based HTTP client for making API requests.
 3. EJS: Templating engine for rendering HTML views.
-4. Basic Authentication: Username and password for secure API requests.
-5. API Key Authentication: API key for secure access to API endpoints.
-6. Bearer Token Authentication: Bearer token for secure API requests.
-7. Node.js: JavaScript runtime environment for executing the server-side code
+4. CSS: Basic styling for the frontend.
+5. Basic Authentication: Username and password for secure API requests.
+6. API Key Authentication: API key for secure access to API endpoints.
+7. Bearer Token Authentication: Bearer token for secure API requests.
+8. Node.js: JavaScript runtime environment for executing the server-side code
 
 BasicAuth:
 
