@@ -1,59 +1,96 @@
-The project demonstrates how to manage authentication of users for accessing an API.
+# User Authentication Management for API Access
 
-The levels of authentication are:
+This project demonstrates various methods of user authentication for accessing an API. The levels of authentication implemented are:
 
-- No Auth: free access to API
-- Basic Auth: require username and password from user to give access to API
-- API Key Authorisation: use an API key to give access to an API result
-- Bearer Token: use a Bearer Token to give access to an API result
+- **No Auth:** Free access to the API.
+- **Basic Auth:** Requires a username and password from the user to access the API.
+- **API Key Authorization:** Uses an API key to grant access to API results.
+- **Bearer Token:** Uses a Bearer Token to grant access to API results.
 
-Technology used in project:
+## Technologies Used
 
-1. Express: Web application framework for Node.js to create server and handle routes.
-2. Axios: Promise-based HTTP client for making API requests.
-3. EJS: Templating engine for rendering HTML views.
-4. CSS: Basic styling for the frontend.
-5. Basic Authentication: Username and password for secure API requests.
-6. API Key Authentication: API key for secure access to API endpoints.
-7. Bearer Token Authentication: Bearer token for secure API requests.
-8. Node.js: JavaScript runtime environment for executing the server-side code
+1. **Express:** A web application framework for Node.js to create the server and handle routes.
+2. **Axios:** A promise-based HTTP client for making API requests.
+3. **EJS:** A templating engine for rendering HTML views.
+4. **CSS:** Basic styling for the frontend.
+5. **Basic Authentication:** Secure API requests using a username and password.
+6. **API Key Authentication:** Secure access to API endpoints using an API key.
+7. **Bearer Token Authentication:** Secure API requests using a Bearer token.
+8. **Node.js:** A JavaScript runtime environment for executing server-side code.
 
-BasicAuth:
+## Authentication Methods
 
-- Need to register via Postman
+### Basic Authentication
 
-  POST https://secrets-api.appbrewery.com/register
-  Request Body:
-  {
+To register via Postman:
+
+```http
+POST https://secrets-api.appbrewery.com/register
+```
+
+**Request Body:**
+
+```json
+{
   "username": "jackbauer",
   "password": "IAmTheBest"
-  }
-
-API Key Authorisation:
-
-- Need to generate an API key to gain access to API
-  GET https://secrets-api.appbrewery.com/generate-api-key
-  Example Response:
-
-{
-"apiKey": "0e0b33ea-3f30-4f6c-a7ae-a9dc6a5d77f9"
 }
+```
 
-Bearer Token:
+### API Key Authorization
 
-- Need to create Bearer Token using Postman
-  POST https://secrets-api.appbrewery.com/get-auth-token
+Generate an API key to gain access to the API:
 
-Request Body (must be the same as your username & password for when you registered previously):
+```http
+GET https://secrets-api.appbrewery.com/generate-api-key
+```
+
+**Example Response:**
+
+```json
 {
-"username": "jackbauer",
-"password": "IAmTheBest"
+  "apiKey": "0e0b33ea-3f30-4f6c-a7ae-a9dc6a5d77f9"
 }
+```
 
-How to run (ensure Node is installed on PC):
+### Bearer Token
 
-1. Ensure in the correct directory
-2. Install NPM packages - npm i
-3. Run code: node index.js
-4. Now go to your web browsing application (Google Chrome, Safari, Firefox, Opera) and type in "localhost:3000/"
+Create a Bearer Token using Postman:
+
+```http
+POST https://secrets-api.appbrewery.com/get-auth-token
+```
+
+**Request Body (must match your registered username & password):**
+
+```json
+{
+  "username": "jackbauer",
+  "password": "IAmTheBest"
+}
+```
+
+## How to Run
+
+Ensure Node.js is installed on your PC. Then follow these steps:
+
+1. Navigate to the project directory.
+2. Install the required NPM packages:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the code:
+
+   ```bash
+   node index.js
+   ```
+
+4. Open your web browser (Google Chrome, Safari, Firefox, Opera) and navigate to:
+
+   ```http
+   http://localhost:3000/
+   ```
+
 5. Use the project!
