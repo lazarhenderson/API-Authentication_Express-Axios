@@ -90,7 +90,7 @@ Ensure Node.js is installed on your PC. Then follow these steps:
 4. Open your web browser (Google Chrome, Safari, Firefox, Opera) and navigate to:
 
    ```http
-   http://localhost:3000/
+   https://localhost:3000/
    ```
 
 5. Use the project!
